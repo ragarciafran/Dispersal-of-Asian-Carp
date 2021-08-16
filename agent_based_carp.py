@@ -404,7 +404,7 @@ if __name__ == "__main__":
     upstream = upstream.iat[0, 0]
 
     ### INPUT NAME OF SPECIES ###
-    carp_species = "bighead"
+    carp_species = "silver"
 
     # loading parameters
     with open("carp.json", "r") as openfile:
@@ -416,7 +416,6 @@ if __name__ == "__main__":
     if school_size:
         density /= school_size
 
-    print(density)
     # number of timesteps
     timestep_length = 1 # in hours
     simulation_length = 2*24 #in hours
@@ -448,6 +447,8 @@ if __name__ == "__main__":
         distance = carp_speed*(timestep_length*60*60)
         movement_type = carp_dict["movement"][season]
         upstream_flag = carp_dict["upstream"][season]
+
+        print(distance)
 
         # iterating over the dike configuration
         dike_config = [None, 0, 1, 2, 3]
